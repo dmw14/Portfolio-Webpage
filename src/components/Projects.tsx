@@ -7,7 +7,7 @@ const Projects = () => {
   const projects = [
     {
       title: "Dilip Industries Website",
-      description: "Designed and developed a responsive product showcase website for a local food brand selling Supari, Dhana Dal, and Saunf. Built using React.js, deployed temporarily on Vercel for demonstration purposes. Focused on clean UI/UX and mobile-friendly design.",
+      description: "Designed and developed a responsive product showcase website for a food brand offering Supari, Dhana Dal, and Saunf. Built using React.js and temporarily deployed on Vercel for demonstration purposes, with a focus on clean UI/UX and mobile-friendly design.",
       image: "/api/placeholder/600/400",
       technologies: ["React.js", "JavaScript", "CSS", "Vercel", "Responsive Design"],
       features: [
