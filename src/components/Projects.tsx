@@ -1,9 +1,13 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ExternalLink, Github, Figma, Globe } from "lucide-react";
+import { useState } from "react";
 
 const Projects = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   const projects = [
     {
       title: "Dilip Industries Website",
@@ -44,23 +48,39 @@ const Projects = () => {
       role: "Frontend Developer"
     },
     {
-      title: "Samsung Galaxy Watch Clone",
-      description: "A pixel-perfect recreation of Samsung's Galaxy Watch7 product page, featuring modern design principles, AI-powered health messaging, and sophisticated product showcase layouts.",
-      image: "/lovable-uploads/6aa7f933-a05f-4b59-959e-95ce215309e5.png",
-      technologies: ["Figma", "UI Design", "Product Design", "Typography"],
+      title: "Samsung Galaxy Main Page & Watch UI Design",
+      description: "Samsung Galaxy Main Page & Watch UI Design featuring pixel-perfect recreation of Samsung's official product pages, including the main homepage highlights and dedicated watch product pages with AI-powered health messaging.",
+      image: "/lovable-uploads/129f4768-cee4-40ee-81ae-3272508a49d8.png",
+      images: [
+        {
+          url: "/lovable-uploads/129f4768-cee4-40ee-81ae-3272508a49d8.png",
+          title: "Homepage Highlights"
+        },
+        {
+          url: "/lovable-uploads/1953d30f-e1dd-4da9-95ac-102b081eaf2c.png",
+          title: "Galaxy Watch7 Page"
+        },
+        {
+          url: "/lovable-uploads/6290ca2a-0cb4-4746-8272-1ccd5d94b101.png",
+          title: "Galaxy Watch Ultra Page"
+        }
+      ],
+      technologies: ["Figma", "UI Design", "Web Design", "Mobile UI"],
       features: [
-        "Pixel-perfect Samsung design recreation",
-        "AI-powered health feature messaging",
-        "Modern product showcase layout",
-        "Professional typography and spacing",
-        "Brand-consistent color schemes"
+        "Pixel-perfect Samsung homepage recreation",
+        "Watch product detail pages design",
+        "AI health features with engaging content",
+        "Brand-consistent color schemes & typography",
+        "User-focused navigation flow",
+        "High-fidelity mockups with industry standards"
       ],
       links: {
-        figma: "/lovable-uploads/6aa7f933-a05f-4b59-959e-95ce215309e5.png",
+        figma: true,
         github: null
       },
       status: "design",
-      role: "UI/UX Designer"
+      role: "UI/UX Designer",
+      hasMultipleImages: true
     },
     {
       title: "YojnaBot - Government Scheme Assistant",
@@ -112,6 +132,40 @@ const Projects = () => {
     return <Badge className={config.color}>{config.label}</Badge>;
   };
 
+  const DesignModal = ({ project }: { project: any }) => {
+    const [modalImageIndex, setModalImageIndex] = useState(0);
+    
+    if (!project.images) return null;
+
+    return (
+      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+        <DialogHeader>
+          <DialogTitle>{project.title}</DialogTitle>
+        </DialogHeader>
+        <div className="space-y-4">
+          <img
+            src={project.images[modalImageIndex].url}
+            alt={project.images[modalImageIndex].title}
+            className="w-full h-auto object-contain rounded-lg"
+          />
+          <div className="flex gap-2 justify-center flex-wrap">
+            {project.images.map((img: any, imgIndex: number) => (
+              <Button
+                key={imgIndex}
+                size="sm"
+                variant={modalImageIndex === imgIndex ? "default" : "secondary"}
+                onClick={() => setModalImageIndex(imgIndex)}
+                className="px-4 py-2"
+              >
+                {img.title}
+              </Button>
+            ))}
+          </div>
+        </div>
+      </DialogContent>
+    );
+  };
+
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -138,7 +192,7 @@ const Projects = () => {
                 <div className={`grid grid-cols-1 lg:grid-cols-2 ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                   {/* Project Image */}
                   <div className={`relative overflow-hidden ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                    {project.image.startsWith('/lovable-uploads/') ? (
+                    {project.image?.startsWith('/lovable-uploads/') ? (
                       <img
                         src={project.image}
                         alt={project.title}
@@ -240,14 +294,29 @@ const Projects = () => {
                       )}
 
                       {project.links.figma && (
-                        <Button
-                          variant="tech_outline"
-                          size="sm"
-                          onClick={() => window.open(project.links.figma, '_blank')}
-                        >
-                          <Figma className="w-4 h-4" />
-                          View Design
-                        </Button>
+                        project.hasMultipleImages ? (
+                          <Dialog>
+                            <DialogTrigger asChild>
+                              <Button
+                                variant="tech_outline"
+                                size="sm"
+                              >
+                                <Figma className="w-4 h-4 mr-2" />
+                                View Design
+                              </Button>
+                            </DialogTrigger>
+                            <DesignModal project={project} />
+                          </Dialog>
+                        ) : (
+                          <Button
+                            variant="tech_outline"
+                            size="sm"
+                            onClick={() => typeof project.links.figma === 'string' && window.open(project.links.figma, '_blank')}
+                          >
+                            <Figma className="w-4 h-4 mr-2" />
+                            View Design
+                          </Button>
+                        )
                       )}
                     </div>
                   </div>
