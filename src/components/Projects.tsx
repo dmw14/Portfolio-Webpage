@@ -22,7 +22,7 @@ const Projects = () => {
         "Product-focused layout design"
       ],
       links: {
-        live: "https://dilip-industries.vercel.app/",
+        live: "https://dilip-webpage.vercel.app/",
         github: null
       },
       status: "live",
