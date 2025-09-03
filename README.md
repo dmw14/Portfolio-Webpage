@@ -26,7 +26,7 @@ The portfolio contains the following sections:
 - **Experience** – Work experience, internships, or major contributions.  
 - **Education** – Academic background, degrees, and relevant coursework.  
 - **Certifications** – Certifications and courses completed to strengthen my profile.  
-- **Featured Projects** – Highlighted projects such as **Yojana Yantra** and **SignatureDrive** with descriptions.  
+- **Featured Projects** – Highlighted projects with descriptions.  
 - **Skills & Interests** – Soft skills, hobbies, and interests outside academics.  
 - **Get in Touch** – Contact information, links to email, GitHub, LinkedIn, and other socials.  
 
