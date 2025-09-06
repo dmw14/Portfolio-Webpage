@@ -42,7 +42,7 @@ const Projects = () => {
       ],
       links: {
         live: "https://yojanayantra.vercel.app/",
-        github: null
+        github: "https://github.com/dmw14/Yojana-Yantra"
       },
       status: "live",
       role: "Frontend Developer"
@@ -82,25 +82,25 @@ const Projects = () => {
       role: "UI/UX Designer",
       hasMultipleImages: true
     },
-    {
-      title: "YojnaBot - Government Scheme Assistant",
-      description: "Comprehensive chatbot interface design for government welfare schemes discovery. Features conversational UI patterns, multi-screen flows, and accessibility-focused design for helping users navigate complex government programs.",
-      image: "/lovable-uploads/f01bf78c-8e79-4c4e-a4dd-7375e90eafcf.png",
-      technologies: ["Figma", "UX Design", "Conversational UI", "Government Tech"],
-      features: [
-        "Multi-screen conversational flow design",
-        "Government scheme information architecture",
-        "Accessibility-focused interface design",
-        "Clean, user-friendly chat patterns",
-        "Comprehensive onboarding experience"
-      ],
-      links: {
-        figma: "/lovable-uploads/f01bf78c-8e79-4c4e-a4dd-7375e90eafcf.png",
-        github: null
+      {
+        title: "SignatureDrive - Car Comparison Website",
+        description: "Developed a professional car comparison platform focused on BMW, Mercedes, and Audi. Designed to help users easily compare specifications, features, and pricing. Built with modern web technologies ensuring a smooth, responsive, and user-friendly experience.",
+        image: "/api/placeholder/600/400",
+        technologies: ["React.js", "TypeScript", "Vite", "Tailwind CSS", "shadcn-ui", "Responsive Design"],
+        features: [
+          "Compare BMW, Mercedes, and Audi cars",
+          "Clean and professional UI/UX",
+          "Responsive and mobile-friendly design",
+          "Fast performance with Vite",
+          "Modern styling with Tailwind CSS and shadcn-ui"
+        ],
+        links: {
+          live: null,
+          github: "https://github.com/dmw14/SignatureDrive---CarCompareWebsite"
+        },
+        status: "in progress",
+        role: "Frontend Developer"
       },
-      status: "design",
-      role: "UI/UX Designer"
-    },
     {
       title: "Spotify Clone UI",
       description: "Complete mobile music streaming interface recreation featuring multiple screens including player, playlist, and album views. Showcases dark theme design, music player controls, and modern mobile UI patterns.",

@@ -19,7 +19,7 @@ const Experience = () => {
     {
       title: "Freelance Web Developer",
       company: "Dilip Industries",
-      period: "July 2025",
+      period: "Jan 2025",
       type: "Freelance",
       location: "Remote",
       responsibilities: [

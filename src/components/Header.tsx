@@ -24,11 +24,11 @@ const Header = () => {
 
   const navItems = [
     { label: "About", id: "about" },
-    { label: "Education", id: "education" },
     { label: "Skills", id: "skills" },
+    { label: "Experience", id: "experience" },
+    { label: "Education", id: "education" },
+    { label: "Certifications", id: "certifications" },   
     { label: "Projects", id: "projects" },
-    { label: "Certifications", id: "certifications" },
-    { label: "Contact", id: "contact" },
   ];
 
   return (
