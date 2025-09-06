@@ -10,25 +10,6 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Dilip Industries Website",
-      description: "Designed and developed a responsive product showcase website for a local food brand selling Supari, Dhana Dal, and Saunf. Built using React.js, deployed temporarily on Vercel for demonstration purposes. Focused on clean UI/UX and mobile-friendly design.",
-      image: "/api/placeholder/600/400",
-      technologies: ["React.js", "JavaScript", "CSS", "Vercel", "Responsive Design"],
-      features: [
-        "Responsive product showcase design",
-        "Mobile-friendly user interface",
-        "Clean and modern UI/UX",
-        "Fast deployment on Vercel",
-        "Product-focused layout design"
-      ],
-      links: {
-        live: "https://dilip-webpage.vercel.app/",
-        github: null
-      },
-      status: "live",
-      role: "Freelance Web Developer"
-    },
-    {
       title: "Yojana Yantra",
       description: "A responsive platform designed to help users navigate and discover government schemes effectively. Built with modern React architecture and pixel-perfect UI implementation.",
       image: "/api/placeholder/600/400",
@@ -48,6 +29,44 @@ const Projects = () => {
       role: "Frontend Developer"
     },
     {
+      title: "Dilip Industries Website",
+      description: "Designed and developed a responsive product showcase website for a local food brand selling Supari, Dhana Dal, and Saunf. Built using React.js, deployed temporarily on Vercel for demonstration purposes. Focused on clean UI/UX and mobile-friendly design.",
+      image: "/api/placeholder/600/400",
+      technologies: ["React.js", "JavaScript", "CSS", "Vercel", "Responsive Design"],
+      features: [
+        "Responsive product showcase design",
+        "Mobile-friendly user interface",
+        "Clean and modern UI/UX",
+        "Fast deployment on Vercel",
+        "Product-focused layout design"
+      ],
+      links: {
+        live: "https://dilip-webpage.vercel.app/",
+        github: null
+      },
+      status: "live",
+      role: "Freelance Web Developer"
+    },       
+      {
+        title: "SignatureDrive - Car Comparison Website",
+        description: "Developed a professional car comparison platform focused on BMW, Mercedes, and Audi. Designed to help users easily compare specifications, features, and pricing. Built with modern web technologies ensuring a smooth, responsive, and user-friendly experience.",
+        image: "/api/placeholder/600/400",
+        technologies: ["React.js", "TypeScript", "Vite", "Tailwind CSS", "shadcn-ui", "Responsive Design"],
+        features: [
+          "Compare BMW, Mercedes, and Audi cars",
+          "Clean and professional UI/UX",
+          "Responsive and mobile-friendly design",
+          "Fast performance with Vite",
+          "Modern styling with Tailwind CSS and shadcn-ui"
+        ],
+        links: {
+          live: null,
+          github: "https://github.com/dmw14/SignatureDrive---CarCompareWebsite"
+        },
+        status: "in progress",
+        role: "Frontend Developer"
+      },
+      {
       title: "Samsung Galaxy Main Page & Watch UI Design",
       description: "Samsung Galaxy Main Page & Watch UI Design featuring pixel-perfect recreation of Samsung's official product pages, including the main homepage highlights and dedicated watch product pages with AI-powered health messaging.",
       image: "/lovable-uploads/129f4768-cee4-40ee-81ae-3272508a49d8.png",
@@ -82,25 +101,6 @@ const Projects = () => {
       role: "UI/UX Designer",
       hasMultipleImages: true
     },
-      {
-        title: "SignatureDrive - Car Comparison Website",
-        description: "Developed a professional car comparison platform focused on BMW, Mercedes, and Audi. Designed to help users easily compare specifications, features, and pricing. Built with modern web technologies ensuring a smooth, responsive, and user-friendly experience.",
-        image: "/api/placeholder/600/400",
-        technologies: ["React.js", "TypeScript", "Vite", "Tailwind CSS", "shadcn-ui", "Responsive Design"],
-        features: [
-          "Compare BMW, Mercedes, and Audi cars",
-          "Clean and professional UI/UX",
-          "Responsive and mobile-friendly design",
-          "Fast performance with Vite",
-          "Modern styling with Tailwind CSS and shadcn-ui"
-        ],
-        links: {
-          live: null,
-          github: "https://github.com/dmw14/SignatureDrive---CarCompareWebsite"
-        },
-        status: "in progress",
-        role: "Frontend Developer"
-      },
     {
       title: "Spotify Clone UI",
       description: "Complete mobile music streaming interface recreation featuring multiple screens including player, playlist, and album views. Showcases dark theme design, music player controls, and modern mobile UI patterns.",
