@@ -29,23 +29,23 @@ const Projects = () => {
       role: "Frontend Developer"
     },
     {
-      title: "Dilip Industries Website",
-      description: "Designed and developed a responsive product showcase website for a local food brand selling Supari, Dhana Dal, and Saunf. Built using React.js, deployed temporarily on Vercel for demonstration purposes. Focused on clean UI/UX and mobile-friendly design.",
+      title: "Object Recognization Model",
+      description: "This project implements a real-time object recognition system using a pre-trained MobileNetSSD model with OpenCV’s Deep Neural Network (DNN) module.It can detect and classify common objects from a webcam feed, displaying bounding boxes and confidence scores for each detected object.",
       image: "/api/placeholder/600/400",
-      technologies: ["React.js", "JavaScript", "CSS", "Vercel", "Responsive Design"],
+      technologies: ["Python", "OpenCV", "NumPy", "Vercel", "Pre-trained MobileNetSSD (Caffe model)"],
       features: [
-        "Responsive product showcase design",
-        "Mobile-friendly user interface",
-        "Clean and modern UI/UX",
-        "Fast deployment on Vercel",
-        "Product-focused layout design"
+        "Real-time object detection pipeline",
+        "Using a pre-trained MobileNetSSD model",
+        "Efficient inference on CPU / resource constraint awareness",
+        "Modularity & extensibility / ease of integration",
+        "Visualization & user feedback (bounding boxes + confidences)"
       ],
       links: {
-        live: "https://dilip-webpage.vercel.app/",
-        github: null
+        live: null,
+        github: "https://github.com/dmw14/Object-Recognization"
       },
-      status: "live",
-      role: "Freelance Web Developer"
+      status: "Prototype",
+      role: "Machine Learning"
     },       
       {
         title: "SignatureDrive - Car Comparison Website",
@@ -101,7 +101,7 @@ const Projects = () => {
       role: "UI/UX Designer",
       hasMultipleImages: true
     },
-    {
+    /*{
       title: "Spotify Clone UI",
       description: "Complete mobile music streaming interface recreation featuring multiple screens including player, playlist, and album views. Showcases dark theme design, music player controls, and modern mobile UI patterns.",
       image: "/lovable-uploads/be898bab-d993-4162-9840-ce6e7c41b095.png",
@@ -119,7 +119,7 @@ const Projects = () => {
       },
       status: "design",
       role: "UI/UX Designer"
-    }
+    }*/
   ];
 
   const getStatusBadge = (status: string) => {
