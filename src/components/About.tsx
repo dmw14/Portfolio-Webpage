@@ -6,7 +6,7 @@ const About = () => {
   const highlights = [
     {
       icon: <Code2 className="w-6 h-6" />,
-      title: "Frontend Development",
+      title: "Web Development",
       description: "Building responsive web applications with React.js and modern tech stack"
     },
     {
