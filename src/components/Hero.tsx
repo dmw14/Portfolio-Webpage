@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, ArrowDown01, ArrowDown01Icon, ArrowDownAZIcon, ArrowDownCircle, ArrowDownFromLine, ArrowLeft, ArrowUp, Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -28,7 +28,7 @@ const Hero = () => {
               </span>
             </h1>
             <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6 animate-slide-in-left">
-              Frontend Developer • UI/UX Designer • ML Enthusiast
+              Web Developer • UI/UX Designer • ML Enthusiast
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed animate-fade-in">
               I am a passionate Frontend Developer and UI/UX Designer with experience 
@@ -59,7 +59,7 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center gap-6 mb-12 animate-fade-in">
             <a
-              href="mailto:dhruv.ingale1404@gmail.com"
+              href="mailto:ingaledhruv4144@gmail.com"
               className="p-3 rounded-full bg-card hover:bg-tech-primary/10 transition-all duration-300 shadow-soft hover:shadow-medium"
             >
               <Mail className="w-6 h-6 text-tech-primary" />
@@ -73,7 +73,7 @@ const Hero = () => {
               <Linkedin className="w-6 h-6 text-tech-primary" />
             </a>
             <a
-              href="https://github.com/dhruv-ingale"
+              href="https://github.com/dmw14"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-card hover:bg-tech-primary/10 transition-all duration-300 shadow-soft hover:shadow-medium"

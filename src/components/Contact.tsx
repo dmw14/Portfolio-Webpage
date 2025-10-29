@@ -29,7 +29,7 @@ const Contact = () => {
       icon: <Github className="w-6 h-6" />,
       label: "GitHub",
       value: "dhruv-ingale",
-      href: "https://github.com/dhruv-ingale",
+      href: "https://github.com/dmw14",
       color: "tech-success"
     }
   ];
@@ -98,11 +98,11 @@ const Contact = () => {
                 </div>
               </div>
               <h3 className="text-2xl font-semibold text-foreground mb-2">
-                Based in Mumbai, India
+                Mumbai, India
               </h3>
               <p className="text-muted-foreground">
                 Currently studying at Dwarkadas Jivanlal Sanghvi College of Engineering, Mumbai.
-                Open to remote work opportunities and local collaborations.
+                Open to on-site/remote work opportunities and local collaborations.
               </p>
             </div>
           </Card>
@@ -127,7 +127,7 @@ const Contact = () => {
                     asChild
                     className="bg-white text-tech-primary hover:bg-white/90"
                   >
-                    <a href="mailto:dhruv.ingale1404@gmail.com">
+                    <a href="mailto:ingaledhruv4144@gmail.com">
                       <Mail className="w-5 h-5 mr-2" />
                       Send Email
                     </a>
