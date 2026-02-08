@@ -5,18 +5,6 @@ import { Calendar, MapPin } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Web Developer Intern",
-      company: "Developers Arena",
-      period: "Oct 2025 - Present",
-      type: "Internship",
-      location: "Remote",
-      responsibilities: [
-        "Contributing to real-world web development projects under industry mentors",
-        "Building and enhancing interactive front-end components using modern web technologies",
-        "Gaining hands-on experience in full-stack development and deployment workflows"
-      ]
-    },
-    {
       title: "Growth & Operations Intern",
       company: "LearnNex (Wipro Partnership)",
       period: "July 2025",
