@@ -10,6 +10,27 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "College Connect - Modern Campus Communication Platform",
+      description: "Developed a comprehensive campus communication platform designed to streamline interaction between students and administrators. The platform features a real-time Notice Board, categorized announcements, search functionality, and an interactive Query Management System for efficient communication. Implemented secure role-based authentication with dedicated dashboards to ensure seamless access control and data integrity.",
+      image: "/api/placeholder/600/400",
+      technologies: ["React.js", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT Authentication"],
+      features: [
+        "Real-time Notice Board for campus-wide announcements",
+        "Categorized announcements with advanced search functionality",
+        "Interactive Query Management System for submitting and tracking queries",
+        "Admin dashboard for managing notices and responding to student queries",
+        "Student dashboard for personalized access and query tracking",
+        "Secure role-based authentication and authorization",
+        "Responsive and user-friendly modern UI"
+        ],
+      links: {
+      live: null,
+      github: "https://github.com/dmw14/College-Connect"
+      },
+    status: "completed",
+    role: "Full Stack Developer"
+    },
+    {
       title: "Yojana Yantra",
       description: "A responsive platform designed to help users navigate and discover government schemes effectively. Built with modern React architecture and pixel-perfect UI implementation.",
       image: "/api/placeholder/600/400",
@@ -47,8 +68,8 @@ const Projects = () => {
       status: "Prototype",
       role: "Machine Learning"
     },       
-      {
-        title: "SignatureDrive - Car Comparison Website",
+    {
+      title: "SignatureDrive - Car Comparison Website",
         description: "Developed a professional car comparison platform focused on BMW, Mercedes, and Audi. Designed to help users easily compare specifications, features, and pricing. Built with modern web technologies ensuring a smooth, responsive, and user-friendly experience.",
         image: "/api/placeholder/600/400",
         technologies: ["React.js", "TypeScript", "Vite", "Tailwind CSS", "shadcn-ui", "Responsive Design"],
@@ -65,7 +86,7 @@ const Projects = () => {
         },
         status: "in progress",
         role: "Frontend Developer"
-      },
+    },     
       {
       title: "Samsung Galaxy Main Page & Watch UI Design",
       description: "Samsung Galaxy Main Page & Watch UI Design featuring pixel-perfect recreation of Samsung's official product pages, including the main homepage highlights and dedicated watch product pages with AI-powered health messaging.",
