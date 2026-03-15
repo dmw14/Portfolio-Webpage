@@ -27,7 +27,8 @@ const Certifications = () => {
       description: "Elite NPTEL Online Certification (Funded by the MoE, Govt. of India) for successfully completing the 4-week course with consolidated score of 63%.",
       details: {
         onlineAssignments: "22.92/25",
-        proctoredExam: "40.1/75"
+        proctoredExam: "40.1/75",
+        totalCandidates: "15251"
       },
       image: "/lovable-uploads/03db87e1-5921-40a6-8434-679cd99605f3.png",
       category: "Technical Skills",
@@ -140,7 +141,7 @@ const Certifications = () => {
                     {cert.details && (
                       <div className="bg-muted/50 rounded-lg p-4">
                         <h4 className="font-semibold text-foreground mb-3">Course Performance:</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                           <div>
                             <span className="text-muted-foreground">Online Assignments:</span>
                             <div className="font-semibold text-tech-success">{cert.details.onlineAssignments}</div>
@@ -148,6 +149,10 @@ const Certifications = () => {
                           <div>
                             <span className="text-muted-foreground">Proctored Exam:</span>
                             <div className="font-semibold text-tech-secondary">{cert.details.proctoredExam}</div>
+                          </div>
+                          <div>
+                            <span className="text-muted-foreground">Total Candidates:</span>
+                            <div className="font-semibold text-tech-accent">{cert.details.totalCandidates}</div>
                           </div>
                         </div>
                       </div>

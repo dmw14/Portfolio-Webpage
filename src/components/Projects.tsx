@@ -10,25 +10,23 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "College Connect - Modern Campus Communication Platform",
-      description: "Developed a comprehensive campus communication platform designed to streamline interaction between students and administrators. The platform features a real-time Notice Board, categorized announcements, search functionality, and an interactive Query Management System for efficient communication. Implemented secure role-based authentication with dedicated dashboards to ensure seamless access control and data integrity.",
+      title: "Dilip Industries Website",
+      description: "Designed and developed a responsive product showcase website for a local food brand selling Supari, Dhana Dal, and Saunf. Built using React.js, deployed temporarily on Vercel for demonstration purposes. Focused on clean UI/UX and mobile-friendly design.",
       image: "/api/placeholder/600/400",
-      technologies: ["React.js", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS", "JWT Authentication"],
+      technologies: ["React.js", "JavaScript", "CSS", "Vercel", "Responsive Design"],
       features: [
-        "Real-time Notice Board for campus-wide announcements",
-        "Categorized announcements with advanced search functionality",
-        "Interactive Query Management System for submitting and tracking queries",
-        "Admin dashboard for managing notices and responding to student queries",
-        "Student dashboard for personalized access and query tracking",
-        "Secure role-based authentication and authorization",
-        "Responsive and user-friendly modern UI"
-        ],
+        "Responsive product showcase design",
+        "Mobile-friendly user interface",
+        "Clean and modern UI/UX",
+        "Fast deployment on Vercel",
+        "Product-focused layout design"
+      ],
       links: {
-      live: null,
-      github: "https://github.com/dmw14/College-Connect"
+        live: "https://dilip-webpage.vercel.app/",
+        github: null
       },
-    status: "completed",
-    role: "Full Stack Developer"
+      status: "live",
+      role: "Freelance Web Developer"
     },
     {
       title: "Yojana Yantra",
@@ -44,103 +42,12 @@ const Projects = () => {
       ],
       links: {
         live: "https://yojanayantra.vercel.app/",
-        github: "https://github.com/dmw14/Yojana-Yantra"
+        github: null
       },
       status: "live",
       role: "Frontend Developer"
     },
-    {
-      title: "Object Recognization Model",
-      description: "This project implements a real-time object recognition system using a pre-trained MobileNetSSD model with OpenCV’s Deep Neural Network (DNN) module.It can detect and classify common objects from a webcam feed, displaying bounding boxes and confidence scores for each detected object.",
-      image: "/api/placeholder/600/400",
-      technologies: ["Python", "OpenCV", "NumPy", "Vercel", "Pre-trained MobileNetSSD (Caffe model)"],
-      features: [
-        "Real-time object detection pipeline",
-        "Using a pre-trained MobileNetSSD model",
-        "Efficient inference on CPU / resource constraint awareness",
-        "Modularity & extensibility / ease of integration",
-        "Visualization & user feedback (bounding boxes + confidences)"
-      ],
-      links: {
-        live: null,
-        github: "https://github.com/dmw14/Object-Recognization"
-      },
-      status: "Prototype",
-      role: "Machine Learning"
-    },       
-    {
-      title: "SignatureDrive - Car Comparison Website",
-        description: "Developed a professional car comparison platform focused on BMW, Mercedes, and Audi. Designed to help users easily compare specifications, features, and pricing. Built with modern web technologies ensuring a smooth, responsive, and user-friendly experience.",
-        image: "/api/placeholder/600/400",
-        technologies: ["React.js", "TypeScript", "Vite", "Tailwind CSS", "shadcn-ui", "Responsive Design"],
-        features: [
-          "Compare BMW, Mercedes, and Audi cars",
-          "Clean and professional UI/UX",
-          "Responsive and mobile-friendly design",
-          "Fast performance with Vite",
-          "Modern styling with Tailwind CSS and shadcn-ui"
-        ],
-        links: {
-          live: null,
-          github: "https://github.com/dmw14/SignatureDrive---CarCompareWebsite"
-        },
-        status: "in progress",
-        role: "Frontend Developer"
-    },     
-      {
-      title: "Samsung Galaxy Main Page & Watch UI Design",
-      description: "Samsung Galaxy Main Page & Watch UI Design featuring pixel-perfect recreation of Samsung's official product pages, including the main homepage highlights and dedicated watch product pages with AI-powered health messaging.",
-      image: "/lovable-uploads/129f4768-cee4-40ee-81ae-3272508a49d8.png",
-      images: [
-        {
-          url: "/lovable-uploads/129f4768-cee4-40ee-81ae-3272508a49d8.png",
-          title: "Homepage Highlights"
-        },
-        {
-          url: "/lovable-uploads/1953d30f-e1dd-4da9-95ac-102b081eaf2c.png",
-          title: "Galaxy Watch7 Page"
-        },
-        {
-          url: "/lovable-uploads/6290ca2a-0cb4-4746-8272-1ccd5d94b101.png",
-          title: "Galaxy Watch Ultra Page"
-        }
-      ],
-      technologies: ["Figma", "UI Design", "Web Design", "Mobile UI"],
-      features: [
-        "Pixel-perfect Samsung homepage recreation",
-        "Watch product detail pages design",
-        "AI health features with engaging content",
-        "Brand-consistent color schemes & typography",
-        "User-focused navigation flow",
-        "High-fidelity mockups with industry standards"
-      ],
-      links: {
-        figma: true,
-        github: null
-      },
-      status: "design",
-      role: "UI/UX Designer",
-      hasMultipleImages: true
-    },
-    /*{
-      title: "Spotify Clone UI",
-      description: "Complete mobile music streaming interface recreation featuring multiple screens including player, playlist, and album views. Showcases dark theme design, music player controls, and modern mobile UI patterns.",
-      image: "/lovable-uploads/be898bab-d993-4162-9840-ce6e7c41b095.png",
-      technologies: ["Figma", "Mobile UI", "Music App Design", "Dark Theme"],
-      features: [
-        "Complete mobile music streaming interface",
-        "Multiple screen designs (player, playlist, album)",
-        "Dark mode design implementation",
-        "Music player controls and navigation",
-        "Modern mobile UI patterns"
-      ],
-      links: {
-        figma: "/lovable-uploads/be898bab-d993-4162-9840-ce6e7c41b095.png",
-        github: null
-      },
-      status: "design",
-      role: "UI/UX Designer"
-    }*/
+    
   ];
 
   const getStatusBadge = (status: string) => {

@@ -15,7 +15,7 @@ const Footer = () => {
               </span>
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Frontend Developer • UI/UX Designer • ML Enthusiast
+              Frontend Developer • ML Enthusiast
             </p>
           </div>
 

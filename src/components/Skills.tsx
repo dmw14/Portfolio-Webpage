@@ -13,56 +13,55 @@ import {
 
 const Skills = () => {
   const skillCategories = [
-{
-title: "Programming Languages",
-icon: <Code className="w-6 h-6" />,
-skills: ["JavaScript", "TypeScript", "Python", "Java", "C", "C++"],
-color: "tech-primary"
-},
-{
-title: "Frontend Development",
-icon: <Globe className="w-6 h-6" />,
-skills: ["React.js", "HTML", "CSS", "Tailwind CSS"],
-color: "tech-secondary"
-},
-{
-title: "Backend Development",
-icon: <Server className="w-6 h-6" />,
-skills: ["Node.js", "Express.js", "REST APIs", "Middleware"],
-color: "tech-success"
-},
-{
-title: "Machine Learning",
-icon: <Brain className="w-6 h-6" />,
-skills: ["pandas", "scikit-learn", "Data Analysis"],
-color: "tech-accent"
-},
-{
-title: "Databases",
-icon: <Database className="w-6 h-6" />,
-skills: ["MongoDB", "MySQL", "Firebase", "Database Design"],
-color: "tech-primary"
-},
-{
-title: "Version Control",
-icon: <GitBranch className="w-6 h-6" />,
-skills: ["Git", "GitHub", "Collaboration"],
-color: "tech-secondary"
-},
-{
-title: "Development Tools",
-icon: <Wrench className="w-6 h-6" />,
-skills: ["VS Code", "Postman", "Chrome DevTools", "npm", "Vite"],
-color: "tech-accent"
-},
-{
-title: "Authentication & Security",
-icon: <Shield className="w-6 h-6" />,
-skills: ["JWT Authentication", "API Integration"],
-color: "tech-success"
-}
-]
-
+    {
+      title: "Programming Languages",
+      icon: <Code className="w-6 h-6" />,
+      skills: ["Python", "JavaScript", "Java", "C", "C++", "TypeScript"],
+      color: "tech-primary"
+    },
+    {
+      title: "Web Development",
+      icon: <Globe className="w-6 h-6" />,
+      skills: ["React.js", "HTML", "CSS", "Node.js", "Vite", "Tailwind CSS"],
+      color: "tech-secondary"
+    },
+    {
+      title: "UI/UX Design",
+      icon: <Palette className="w-6 h-6" />,
+      skills: ["Figma", "Adobe XD", "Wireframing", "Prototyping", "Design Systems"],
+      color: "tech-accent"
+    },
+    {
+      title: "Machine Learning",
+      icon: <Brain className="w-6 h-6" />,
+      skills: ["pandas", "scikit-learn", "Data Analysis", "Python ML"],
+      color: "tech-success"
+    },
+    {
+      title: "Databases",
+      icon: <Database className="w-6 h-6" />,
+      skills: ["MySQL", "Firebase", "Database Design"],
+      color: "tech-primary"
+    },
+    {
+      title: "Version Control",
+      icon: <GitBranch className="w-6 h-6" />,
+      skills: ["Git", "GitHub", "Collaboration"],
+      color: "tech-secondary"
+    },
+    {
+      title: "Development Tools",
+      icon: <Wrench className="w-6 h-6" />,
+      skills: ["VS Code", "Postman", "Chrome DevTools"],
+      color: "tech-accent"
+    },
+    {
+      title: "Frameworks & Libraries",
+      icon: <Laptop className="w-6 h-6" />,
+      skills: ["React", "TypeScript", "Tailwind", "Vite"],
+      color: "tech-success"
+    }
+  ];
 
   const getColorClass = (color: string) => {
     const colorMap = {

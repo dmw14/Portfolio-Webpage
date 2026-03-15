@@ -9,11 +9,7 @@ const About = () => {
       title: "Web Development",
       description: "Building responsive web applications with React.js and modern tech stack"
     },
-    {
-      icon: <Palette className="w-6 h-6" />,
-      title: "UI/UX Design", 
-      description: "Creating intuitive user experiences with Figma and design systems"
-    },
+    
     {
       icon: <Brain className="w-6 h-6" />,
       title: "Machine Learning",

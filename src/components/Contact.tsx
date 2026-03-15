@@ -21,8 +21,8 @@ const Contact = () => {
     {
       icon: <Linkedin className="w-6 h-6" />,
       label: "LinkedIn",
-      value: "dhruv-ingale-dmw14",
-      href: "https://www.linkedin.com/in/dhruv-ingale-dmw14",
+      value: "Dhruv Ingale - dmw14",
+      href: "www.linkedin.com/in/dmw14",
       color: "tech-accent"
     },
     {
@@ -98,11 +98,11 @@ const Contact = () => {
                 </div>
               </div>
               <h3 className="text-2xl font-semibold text-foreground mb-2">
-                Mumbai, India
+                Based in Mumbai, India
               </h3>
               <p className="text-muted-foreground">
                 Currently studying at Dwarkadas Jivanlal Sanghvi College of Engineering, Mumbai.
-                Open to on-site/remote work opportunities and local collaborations.
+                Open to remote work opportunities and local collaborations.
               </p>
             </div>
           </Card>
@@ -139,7 +139,7 @@ const Contact = () => {
                     className="border-white/30 text-white hover:bg-white/10 bg-transparent"
                   >
                     <a 
-                      href="https://www.linkedin.com/in/dhruv-ingale-dmw14"
+                      href="https://www.linkedin.com/in/dmw14"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
