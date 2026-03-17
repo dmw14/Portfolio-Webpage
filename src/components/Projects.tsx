@@ -10,23 +10,42 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Dilip Industries Website",
-      description: "Designed and developed a responsive product showcase website for a local food brand selling Supari, Dhana Dal, and Saunf. Built using React.js, deployed temporarily on Vercel for demonstration purposes. Focused on clean UI/UX and mobile-friendly design.",
+      title: "Campus Connect — College Communication Platform",
+      description: "Developed a full-stack college communication platform enabling real-time data synchronization and role-based access control using React, TypeScript, Tailwind CSS, and PostgreSQL.",
       image: "/api/placeholder/600/400",
-      technologies: ["React.js", "JavaScript", "CSS", "Vercel", "Responsive Design"],
+      technologies: ["React", "TypeScript", "Tailwind CSS", "PostgreSQL", "TanStack Query", "shadcn/ui"],
       features: [
-        "Responsive product showcase design",
-        "Mobile-friendly user interface",
-        "Clean and modern UI/UX",
-        "Fast deployment on Vercel",
-        "Product-focused layout design"
+        "Secure authentication with role-based access control",
+        "Admin dashboard for categorized notices (urgent, exam, academic, event)",
+        "Student query management with status tracking and response workflow",
+        "Row-Level Security (RLS) for data protection",
+        "Responsive UI with search and efficient server-state management"
       ],
       links: {
-        live: "https://dilip-webpage.vercel.app/",
-        github: null
+        live: null,
+        github: "https://github.com/dmw14/College-Connect"
       },
       status: "live",
-      role: "Freelance Web Developer"
+      role: "Full Stack Developer"
+    },
+    {
+        title: "SignatureDrive — Luxury Car Comparison Platform",
+        description: "Developed a premium car comparison platform enabling users to explore and compare luxury vehicles from BMW, Mercedes-Benz, and Audi with detailed specifications and a modern, responsive UI.",
+        image: "/api/placeholder/600/400",
+        technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui"],
+        features: [
+          "Compare luxury cars from BMW, Mercedes-Benz, and Audi",
+          "Detailed specifications, performance metrics, and features",
+          "High-quality car images for enhanced visualization",
+          "Fully responsive and modern UI design",
+          "Reusable component-based architecture for scalability"
+      ],
+      links: {
+        live: "",
+        github: "https://github.com/dmw14/SignatureDrive---CarCompareWebsite"
+      },
+      status: "completed",
+      role: "Frontend Developer"
     },
     {
       title: "Yojana Yantra",

@@ -31,10 +31,7 @@ const Hero = () => {
               Web Developer • ML Enthusiast
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed animate-fade-in">
-              I am a passionate Frontend Developer and UI/UX Designer with experience 
-              in building interactive web applications using React.js and Figma. I also 
-              have a keen interest in Machine Learning & Artificial Intelligence, 
-              currently exploring real-world applications.
+              I am a passionate developer who enjoys building modern web applications and solving real-world problems through technology. I primarily work with React, TypeScript, Tailwind CSS, and Vite for frontend development, and use Supabase and PostgreSQL for backend services, authentication, and database management. I am currently learning the MERN stack to further strengthen my full-stack development skills. Some of my key projects include Yojana Yantra, SignatureDrive, and College Connect, where I focused on creating responsive, user-friendly, and scalable web applications
             </p>
           </div>
 
@@ -59,7 +56,7 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center gap-6 mb-12 animate-fade-in">
             <a
-              href="mailto:dhruv.ingale1404@gmail.com"
+              href="mailto:ingaledhruv4144@gmail.com"
               className="p-3 rounded-full bg-card hover:bg-tech-primary/10 transition-all duration-300 shadow-soft hover:shadow-medium"
             >
               <Mail className="w-6 h-6 text-tech-primary" />

@@ -13,8 +13,7 @@ const SkillsInterests = () => {
     "Automobiles & Machines",
     "Badminton",
     "Cricket",
-    "Automotive Technology",
-    "Engineering Innovations"
+    "Automotive Technology"
   ];
 
   return (
