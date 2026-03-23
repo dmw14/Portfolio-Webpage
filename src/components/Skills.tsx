@@ -28,7 +28,7 @@ const Skills = () => {
     {
       title: "UI/UX Design",
       icon: <Palette className="w-6 h-6" />,
-      skills: ["Figma", "Adobe XD", "Wireframing", "Prototyping", "Design Systems"],
+      skills: ["Figma", "Prototyping", "Design Systems"],
       color: "tech-accent"
     },
     {
@@ -52,7 +52,7 @@ const Skills = () => {
     {
       title: "Development Tools",
       icon: <Wrench className="w-6 h-6" />,
-      skills: ["VS Code", "Postman", "Chrome DevTools"],
+      skills: ["VS Code", "Postman"],
       color: "tech-accent"
     },
     {
