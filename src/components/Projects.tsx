@@ -9,11 +9,30 @@ const Projects = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const projects = [
+        {
+        title: "SignatureDrive — Luxury Car Comparison Platform",
+        description: "Built a full-stack car comparison platform that allows users to explore and compare BMW, Mercedes-Benz, and Audi models with detailed specifications, pricing, and real-time data updates.",
+        image: "/api/placeholder/600/400",
+        technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "PostgreSQL"],
+        features: [
+          "Compare luxury cars from BMW, Mercedes-Benz, and Audi with detailed specs and pricing",
+          "Integrated Supabase for backend services including database design and real-time data handling",
+          "Dynamic data-driven components for managing car variants, features, and comparisons" ,
+          "Fully responsive and modern UI design",
+          "Reusable component-based architecture for scalability"
+      ],
+      links: {
+        live: "https://signature-drive.vercel.app",
+        github: "https://github.com/dmw14/SignatureDrive---CarCompareWebsite"
+      },
+      status: "live",
+      role: "Full Stack Developer"
+    },
     {
-      title: "Campus Connect — College Communication Platform",
+      title: "College Connect — College Communication Platform",
       description: "Developed a full-stack college communication platform enabling real-time data synchronization and role-based access control using React, TypeScript, Tailwind CSS, and PostgreSQL.",
       image: "/api/placeholder/600/400",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "PostgreSQL", "TanStack Query", "shadcn/ui"],
+      technologies: ["React", "TypeScript", "Tailwind CSS", "PostgreSQL", "TanStack Query", "Superbase"],
       features: [
         "Secure authentication with role-based access control",
         "Admin dashboard for categorized notices (urgent, exam, academic, event)",
@@ -27,25 +46,6 @@ const Projects = () => {
       },
       status: "live",
       role: "Full Stack Developer"
-    },
-    {
-        title: "SignatureDrive — Luxury Car Comparison Platform",
-        description: "Developed a premium car comparison platform enabling users to explore and compare luxury vehicles from BMW, Mercedes-Benz, and Audi with detailed specifications and a modern, responsive UI.",
-        image: "/api/placeholder/600/400",
-        technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui"],
-        features: [
-          "Compare luxury cars from BMW, Mercedes-Benz, and Audi",
-          "Detailed specifications, performance metrics, and features",
-          "High-quality car images for enhanced visualization",
-          "Fully responsive and modern UI design",
-          "Reusable component-based architecture for scalability"
-      ],
-      links: {
-        live: "",
-        github: "https://github.com/dmw14/SignatureDrive---CarCompareWebsite"
-      },
-      status: "completed",
-      role: "Frontend Developer"
     },
     {
       title: "Yojana Yantra",

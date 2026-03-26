@@ -15,7 +15,7 @@ const Footer = () => {
               </span>
             </h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Frontend Developer • ML Enthusiast
+              Web Developer
             </p>
           </div>
 
@@ -41,11 +41,7 @@ const Footer = () => {
               <div className="text-muted-foreground text-sm">
                 © {currentYear} Dhruv Sunil Ingale. All rights reserved.
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                <span>Built with</span>
-                <Heart className="w-4 h-4 text-red-500 fill-current" />
-                <span>using React & TypeScript</span>
-              </div>
+              
             </div>
           </div>
 
