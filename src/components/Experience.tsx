@@ -12,7 +12,7 @@ const Experience = () => {
       location: "Remote",
       responsibilities: [
         "Designed and developed a fully responsive company website for Dilip Industries to showcase their industrial products and services.",
-        "Created structured product pages with detailed descriptions, system workflows, and user-friendly navigation to enhance customer understanding.",
+        "Created structured product pages with detailed descriptions and user-friendly navigation to enhance customer understanding.",
         "Delivered a customized web solution focused on performance, usability, and aligning with client requirements for improved online presence."
       ]
     },
