@@ -7,7 +7,7 @@ const About = () => {
     {
       icon: <Code2 className="w-6 h-6" />,
       title: "Web Development",
-      description: "Building responsive web applications with React.js and modern tech stack"
+      description: "Building responsive web applications with modern web technologies"
     },
     
     {
