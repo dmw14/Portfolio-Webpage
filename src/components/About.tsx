@@ -40,16 +40,7 @@ const About = () => {
             <Card className="p-8 bg-gradient-card shadow-medium">
               <h3 className="text-2xl font-semibold mb-6 text-tech-primary">My Journey</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Currently pursuing Computer Engineering at Dwarkadas Jivanlal Sanghvi College 
-                of Engineering, Mumbai, I'm passionate about creating digital solutions that 
-                make a difference. My journey in tech started with a curiosity about how 
-                things work and has evolved into a deep love for building user-centric applications.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                When I'm not coding, you'll find me exploring the latest in automotive 
-                technology, playing badminton or cricket, or diving deep into machine 
-                learning research. I believe in the power of continuous learning and 
-                staying updated with emerging technologies.
+                Currently pursuing Computer Engineering at Dwarkadas Jivanlal Sanghvi College of Engineering, Mumbai, I’m passionate about creating digital solutions that make a difference. My journey in tech started with a curiosity about how things work and has evolved into a strong focus on building efficient, scalable, and user-centric applications. I continuously work on improving my problem-solving skills and exploring modern technologies to build better systems.
               </p>
             </Card>
 
