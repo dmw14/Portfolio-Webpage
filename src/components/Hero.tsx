@@ -31,7 +31,8 @@ const Hero = () => {
               Web Developer
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed animate-fade-in">
-              I am a passionate developer who enjoys building modern web applications and solving real-world problems through technology. I primarily work with React, TypeScript, Tailwind CSS, and Vite for frontend development, and use Supabase and PostgreSQL for backend services, authentication, and database management. I am currently learning the MERN stack to further strengthen my full-stack development skills. Some of my key projects include Yojana Yantra, SignatureDrive, and College Connect, where I focused on creating responsive, user-friendly, and scalable web applications
+              Passionate developer focused on building modern, scalable applications that solve real-world problems.
+Strong emphasis on clean design, performance, and delivering seamless user experiences.
             </p>
           </div>
 

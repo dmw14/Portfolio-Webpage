@@ -40,7 +40,7 @@ const Skills = () => {
     {
       title: "Databases",
       icon: <Database className="w-6 h-6" />,
-      skills: ["MySQL", "Firebase", "Database Design"],
+      skills: ["Supabase", "PostgreSQL", "MySQL", "Firebase", "Database Design"],
       color: "tech-primary"
     },
     {
