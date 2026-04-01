@@ -5,27 +5,27 @@ import { Calendar, MapPin } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "Freelance Web Developer",
+      company: "Dilip Industries",
+      period: "Jan 2026",
+      type: "Freelance",
+      location: "Remote",
+      responsibilities: [
+        "Designed and developed a fully responsive company website for Dilip Industries to showcase their industrial products and services.",
+        "Created structured product pages with detailed descriptions, system workflows, and user-friendly navigation to enhance customer understanding.",
+        "Delivered a customized web solution focused on performance, usability, and aligning with client requirements for improved online presence."
+      ]
+    },
+    {
       title: "Growth & Operations Intern",
       company: "LearnNex (Wipro Partnership)",
       period: "July 2025",
       type: "Internship",
       location: "Remote",
       responsibilities: [
-        "Contributed to strategic growth planning and operations management for the LearnNex platform",
-        "Assisted in business development initiatives supporting expansion in tech driven education solutions",
-        "Collaborated with cross functional teams to deliver operational insights increasing user engagement"
-      ]
-    },
-    {
-      title: "Freelance Web Developer",
-      company: "Dilip Industries",
-      period: "Jan 2025",
-      type: "Freelance",
-      location: "Remote",
-      responsibilities: [
-        "Designed and developed a responsive product showcase website to display company products",
-        "Optimized for mobile and user friendly interactions, focusing on clean UI/UX and brand consistency",
-        "Deployed on Vercel for demonstration and client review"
+        "Contributed to strategic growth planning and operations management for the LearnNex platform.",
+        "Assisted in business development initiatives supporting expansion in tech driven education solutions.",
+        "Collaborated with cross functional teams to deliver operational insights increasing user engagement."
       ]
     }
   ];
