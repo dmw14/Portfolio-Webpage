@@ -22,7 +22,7 @@ const Skills = () => {
     {
       title: "Web Development",
       icon: <Globe className="w-6 h-6" />,
-      skills: ["React.js", "HTML", "CSS", "Node.js", "Vite", "Tailwind CSS"],
+      skills: ["React.js", "HTML", "CSS","Express.js", "Node.js", "Vite", "Tailwind CSS"],
       color: "tech-secondary"
     },
     {
@@ -34,13 +34,13 @@ const Skills = () => {
     {
       title: "Machine Learning",
       icon: <Brain className="w-6 h-6" />,
-      skills: ["pandas", "scikit-learn", "Data Analysis", "Python ML"],
+      skills: ["pandas", "scikit-learn", "Data Analysis", "Python ML", "Data Preprocessing & Visualization"],
       color: "tech-success"
     },
     {
       title: "Databases",
       icon: <Database className="w-6 h-6" />,
-      skills: ["Supabase", "PostgreSQL", "MySQL", "Firebase", "Database Design"],
+      skills: ["MongoDB", "Supabase", "PostgreSQL", "MySQL", "Firebase", "Database Design"],
       color: "tech-primary"
     },
     {
