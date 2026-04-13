@@ -1,14 +1,14 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Code, 
-  Globe, 
-  Palette, 
-  Brain, 
-  Database, 
-  GitBranch, 
+import {
+  Code,
+  Globe,
+  Palette,
+  Brain,
+  Database,
   Wrench,
-  Laptop
+  Cloud,
+  GitBranch
 } from "lucide-react";
 
 const Skills = () => {
@@ -16,49 +16,49 @@ const Skills = () => {
     {
       title: "Programming Languages",
       icon: <Code className="w-6 h-6" />,
-      skills: ["Python", "JavaScript", "Java", "C", "C++", "TypeScript"],
+      skills: ["Python", "Java", "JavaScript", "C", "C++", "TypeScript"],
       color: "tech-primary"
     },
     {
       title: "Web Development",
       icon: <Globe className="w-6 h-6" />,
-      skills: ["React.js", "HTML", "CSS","Express.js", "Node.js", "Vite", "Tailwind CSS"],
+      skills: ["React.js", "HTML", "CSS", "Express.js", "Node.js", "Vite", "Tailwind CSS"],
       color: "tech-secondary"
+    },
+    {
+      title: "Cloud & Storage",
+      icon: <Cloud className="w-6 h-6" />,
+      skills: ["AWS", "Cloudinary"],
+      color: "tech-accent"
+    },
+    {
+      title: "Databases",
+      icon: <Database className="w-6 h-6" />,
+      skills: ["MongoDB", "Supabase", "PostgreSQL", "MySQL"],
+      color: "tech-success"
     },
     {
       title: "UI/UX Design",
       icon: <Palette className="w-6 h-6" />,
       skills: ["Figma", "Prototyping", "Design Systems"],
-      color: "tech-accent"
-    },
-    {
-      title: "Machine Learning",
-      icon: <Brain className="w-6 h-6" />,
-      skills: ["pandas", "scikit-learn", "Data Analysis", "Python ML", "Data Preprocessing & Visualization"],
-      color: "tech-success"
-    },
-    {
-      title: "Databases",
-      icon: <Database className="w-6 h-6" />,
-      skills: ["MongoDB", "Supabase", "PostgreSQL", "MySQL", "Firebase", "Database Design"],
       color: "tech-primary"
+    },
+    {
+      title: "Machine Learning & Data Analysis",
+      icon: <Brain className="w-6 h-6" />,
+      skills: ["Pandas", "scikit-learn", "Data Preprocessing & Visualization"],
+      color: "tech-secondary"
     },
     {
       title: "Version Control",
       icon: <GitBranch className="w-6 h-6" />,
-      skills: ["Git", "GitHub", "Collaboration"],
-      color: "tech-secondary"
+      skills: ["Git", "GitHub"],
+      color: "tech-accent"
     },
     {
       title: "Development Tools",
       icon: <Wrench className="w-6 h-6" />,
       skills: ["VS Code", "Postman"],
-      color: "tech-accent"
-    },
-    {
-      title: "Frameworks & Libraries",
-      icon: <Laptop className="w-6 h-6" />,
-      skills: ["React", "TypeScript", "Tailwind", "Vite"],
       color: "tech-success"
     }
   ];
@@ -104,7 +104,7 @@ const Skills = () => {
                     {category.title}
                   </h3>
                 </div>
-                
+
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <Badge
