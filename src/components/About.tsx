@@ -1,23 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code2, Palette, Brain } from "lucide-react";
+import { Code2, Palette } from "lucide-react";
 
 const About = () => {
-  const highlights = [
-    {
-      icon: <Code2 className="w-6 h-6" />,
-      title: "Web Development",
-      description: "Building responsive web applications with modern web technologies"
-    },
-    
-    {
-      icon: <Brain className="w-6 h-6" />,
-      title: "Machine Learning",
-      description: "Exploring AI applications with Python and data science tools"
-    }
-  ];
-
-
   return (
     <section id="about" className="py-20 bg-gradient-hero">
       <div className="container mx-auto px-4">
@@ -40,25 +25,23 @@ const About = () => {
             <Card className="p-8 bg-gradient-card shadow-medium">
               <h3 className="text-2xl font-semibold mb-6 text-tech-primary">My Journey</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Currently pursuing Computer Engineering at Dwarkadas Jivanlal Sanghvi College of Engineering, Mumbai, I’m passionate about creating digital solutions that make a difference. My journey in tech started with a curiosity about how things work and has evolved into a strong focus on building efficient, scalable, and user-centric applications. I continuously work on improving my problem-solving skills and exploring modern technologies to build better systems.
+                Currently pursuing Computer Engineering at Dwarkadas Jivanlal Sanghvi College of Engineering, Mumbai, I'm passionate about creating digital solutions that make a difference. My journey in tech started with a curiosity about how things work and has evolved into a strong focus on building efficient, scalable, and user-centric applications. I continuously work on improving my problem-solving skills and exploring modern technologies to build better systems.
               </p>
             </Card>
 
-            {/* Highlights */}
-            <div className="space-y-6">
-              {highlights.map((item, index) => (
-                <Card key={index} className="p-6 bg-card shadow-soft hover:shadow-medium transition-all duration-300">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-tech-primary/10 text-tech-primary">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
-                      <p className="text-muted-foreground">{item.description}</p>
-                    </div>
+            {/* Web Development Highlight */}
+            <div className="flex items-center">
+              <Card className="p-6 bg-card shadow-soft hover:shadow-medium transition-all duration-300 w-full">
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-lg bg-tech-primary/10 text-tech-primary">
+                    <Code2 className="w-6 h-6" />
                   </div>
-                </Card>
-              ))}
+                  <div>
+                    <h4 className="text-lg font-semibold mb-2">Web Development</h4>
+                    <p className="text-muted-foreground">Building responsive web applications with modern web technologies</p>
+                  </div>
+                </div>
+              </Card>
             </div>
           </div>
 

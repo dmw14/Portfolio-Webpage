@@ -18,7 +18,7 @@ const Hero = () => {
       <div className="absolute inset-0 opacity-30">
         <div className="w-full h-full bg-gradient-to-br from-tech-primary/5 to-tech-secondary/5"></div>
       </div>
-      
+
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
@@ -32,7 +32,7 @@ const Hero = () => {
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed animate-fade-in">
               Passionate developer focused on building modern, scalable applications that solve real-world problems.
-Strong emphasis on clean design, performance, and delivering seamless user experiences.
+              Strong emphasis on clean design, performance, and delivering seamless user experiences.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ Strong emphasis on clean design, performance, and delivering seamless user exper
           {/* Scroll Indicator */}
           <div
             className="flex flex-col items-center cursor-pointer animate-float"
-            onClick={() => scrollToSection("about")}
+            onClick={() => scrollToSection("skills")}
           >
             <span className="text-sm text-muted-foreground mb-2">Scroll to explore</span>
             <ArrowDown className="w-6 h-6 text-tech-primary animate-bounce" />
