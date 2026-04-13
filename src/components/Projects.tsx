@@ -9,17 +9,60 @@ const Projects = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const projects = [
-        {
-        title: "SignatureDrive — Luxury Car Comparison Platform",
-        description: "Built a full-stack car comparison platform that allows users to explore and compare BMW, Mercedes-Benz, and Audi models with detailed specifications, pricing, and real-time data updates.",
-        image: "/api/placeholder/600/400",
-        technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase", "PostgreSQL"],
-        features: [
-          "Compare luxury cars from BMW, Mercedes-Benz, and Audi with detailed specs and pricing",
-          "Integrated Supabase for backend services including database design and real-time data handling",
-          "Dynamic data-driven components for managing car variants, features, and comparisons" ,
-          "Fully responsive and modern UI design",
-          "Reusable component-based architecture for scalability"
+    {
+      title: "Yojana Yantra — Government Scheme Discovery Platform",
+      description:
+        "Built a full-stack platform to simplify discovery of government schemes by categorizing and presenting information in a clear, user-friendly format, improving accessibility over traditional government portals.",
+      image: "/api/placeholder/600/400",
+      technologies: ["React", "FastAPI", "AWS", "OpenAI API", "Docker"],
+      features: [
+        "Eligibility-check system to help users quickly identify applicable government schemes",
+        "Automated data scraping and web search integration for up-to-date scheme information",
+        "Detailed scheme insights including eligibility, documents, and application steps",
+        "Deployed on AWS with Docker for scalability and reliability",
+        "Integrated direct application links for seamless navigation"
+      ],
+      links: {
+        live: "https://yojanayantra.vercel.app/",
+        github: "https://github.com/dmw14/Yojana-Yantra"
+      },
+      status: "live",
+      role: "Full Stack Developer"
+    },
+
+    {
+      title: "CloudVault — Cloud File Storage & Sharing Platform",
+      description:
+        "Developed a full-stack cloud-based file storage and sharing platform enabling users to upload, manage, and securely access files via shareable links.",
+      image: "/api/placeholder/600/400",
+      technologies: ["React", "Node.js", "Express.js", "MongoDB", "Cloudinary"],
+      features: [
+        "Secure file upload and sharing with unique shareable links",
+        "RESTful backend with Express and file handling using Multer",
+        "Cloudinary integration for optimized cloud storage and CDN delivery",
+        "Stored only file metadata (URL, public ID) in MongoDB for efficiency",
+        "Responsive frontend with seamless API communication using Axios"
+      ],
+      links: {
+        live: null,
+        github: "https://github.com/dmw14/CloudVault"
+      },
+      status: "live",
+      role: "Full Stack Developer"
+    },
+
+    {
+      title: "SignatureDrive — Luxury Car Comparison Platform",
+      description:
+        "Built a full-stack car comparison platform that allows users to explore and compare BMW, Mercedes-Benz, and Audi models with detailed specifications, pricing, and real-time updates.",
+      image: "/api/placeholder/600/400",
+      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
+      features: [
+        "Compare luxury cars with detailed specs, variants, and pricing",
+        "Dynamic data-driven UI for real-time comparison updates",
+        "Supabase integration for backend and real-time data handling",
+        "Reusable component-based architecture for scalability",
+        "Fully responsive modern UI design"
       ],
       links: {
         live: "https://signature-drive.vercel.app",
@@ -28,17 +71,19 @@ const Projects = () => {
       status: "live",
       role: "Full Stack Developer"
     },
+
     {
       title: "College Connect — College Communication Platform",
-      description: "Developed a full-stack college communication platform enabling real-time data synchronization and role-based access control using React, TypeScript, Tailwind CSS, and PostgreSQL.",
+      description:
+        "Developed a full-stack college communication platform with real-time updates and role-based access control to streamline communication between students and administrators.",
       image: "/api/placeholder/600/400",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "PostgreSQL", "TanStack Query", "Superbase"],
+      technologies: ["React", "TypeScript", "Tailwind CSS", "PostgreSQL", "TanStack Query", "Supabase"],
       features: [
-        "Secure authentication with role-based access control",
-        "Admin dashboard for categorized notices (urgent, exam, academic, event)",
-        "Student query management with status tracking and response workflow",
-        "Row-Level Security (RLS) for data protection",
-        "Responsive UI with search and efficient server-state management"
+        "Role-based authentication system for students and admins",
+        "Admin dashboard for categorized notices (academic, exam, events, urgent)",
+        "Student query system with status tracking and response workflow",
+        "Row-Level Security (RLS) for secure data access",
+        "Efficient server-state management using TanStack Query"
       ],
       links: {
         live: null,
@@ -46,27 +91,7 @@ const Projects = () => {
       },
       status: "live",
       role: "Full Stack Developer"
-    },
-    {
-      title: "Yojana Yantra",
-      description: "A responsive platform designed to help users navigate and discover government schemes effectively. Built with modern React architecture and pixel-perfect UI implementation.",
-      image: "/api/placeholder/600/400",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Figma"],
-      features: [
-        "Responsive and user-friendly frontend",
-        "High-performance React with TypeScript",
-        "Modular UI components with Tailwind CSS",
-        "Pixel-perfect Figma to code translation",
-        "Clean code architecture"
-      ],
-      links: {
-        live: "https://yojanayantra.vercel.app/",
-        github: null
-      },
-      status: "live",
-      role: "Frontend Developer"
-    },
-    
+    }
   ];
 
   const getStatusBadge = (status: string) => {
@@ -81,7 +106,7 @@ const Projects = () => {
 
   const DesignModal = ({ project }: { project: any }) => {
     const [modalImageIndex, setModalImageIndex] = useState(0);
-    
+
     if (!project.images) return null;
 
     return (
@@ -221,7 +246,7 @@ const Projects = () => {
                           </a>
                         </Button>
                       )}
-                      
+
                       {project.links.github && (
                         <Button
                           variant="tech_outline"
