@@ -5,7 +5,7 @@ import { Calendar, MapPin } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Full Stack Developer",
+      title: "Full Stack Development Intern",
       company: "Dynamisch IT Pvt Ltd",
       period: "Jul 2026 - Present",
       type: "Hybrid",
@@ -32,8 +32,8 @@ const Experience = () => {
       title: "Growth & Operations Intern",
       company: "LearnNex (Wipro Partnership)",
       period: "July 2025",
-      type: "Internship",
-      location: "Remote",
+      type: "Remote",
+      location: "Bangalore",
       responsibilities: [
         "Contributed to strategic growth planning and operations management for the LearnNex platform.",
         "Assisted in business development initiatives supporting expansion in tech driven education solutions.",
