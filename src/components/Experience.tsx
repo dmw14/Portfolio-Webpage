@@ -5,6 +5,18 @@ import { Calendar, MapPin } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
+      title: "Full Stack Developer",
+      company: "Dynamisch IT Pvt Ltd",
+      period: "Jul 2026 - Present",
+      type: "Hybrid",
+      location: "Pune",
+      responsibilities: [
+        "Developing and maintaining full-stack web applications using modern frontend and backend technologies.",
+        "Collaborating with cross-functional teams to implement new features, debug issues, and enhance application performance.",
+        "Participating in code reviews, Agile/Scrum ceremonies, and version control workflows using Git and GitHub while gaining hands-on industry experience."
+  ]
+    },
+    {
       title: "Freelance Web Developer",
       company: "Dilip Industries",
       period: "Jan 2026",
