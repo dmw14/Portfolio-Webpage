@@ -8,7 +8,7 @@ const Education = () => {
       institution: "Dwarkadas Jivanlal Sanghvi College of Engineering, Mumbai",
       degree: "Bachelor of Engineering (B.E.) in Computer Engineering",
       period: "August 2023 - 2027",
-      score: "CGPA: 8.1/10 (till 5th Semester)",
+      score: "CGPA: 8.14/10 (till 6th Semester)",
       status: "current",
       description: "Pursuing comprehensive computer engineering curriculum with focus on software development, algorithms, and emerging technologies."
     },
@@ -111,11 +111,11 @@ const Education = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
             <Card className="p-6 bg-gradient-card shadow-soft text-center">
-              <div className="text-3xl font-bold text-tech-primary mb-2">8.1</div>
+              <div className="text-3xl font-bold text-tech-primary mb-2">8.14</div>
               <div className="text-muted-foreground">Current CGPA</div>
             </Card>
             <Card className="p-6 bg-gradient-card shadow-soft text-center">
-              <div className="text-3xl font-bold text-tech-secondary mb-2">5</div>
+              <div className="text-3xl font-bold text-tech-secondary mb-2">6</div>
               <div className="text-muted-foreground">Semesters Completed</div>
             </Card>
             <Card className="p-6 bg-gradient-card shadow-soft text-center">
