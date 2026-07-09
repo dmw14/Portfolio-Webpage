@@ -1,29 +1,31 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { useScrollReveal, useCountUp } from "@/hooks/useScrollReveal";
 import { Award, ExternalLink, Calendar, Users } from "lucide-react";
 
 const Certifications = () => {
+  const sectionRef = useScrollReveal();
+  const certCountRef = useCountUp(3, 1200);
+  const orgCountRef = useCountUp(3, 1200);
+  const yearCountRef = useCountUp(2025, 1800);
+
   const certifications = [
     {
       title: "Certificate of Growth & Operations",
       organization: "LearnNex",
       partner: "Wipro",
       date: "July 14, 2025",
-      recipient: "Dhruv Ingale",
       description: "In recognition of outstanding and professional performance to the growth and operations for LearnNex.",
       image: "/lovable-uploads/c5f6a152-4aba-464c-b47f-464d983a43f1.png",
       category: "Professional Development",
       skills: ["Growth Strategy", "Operations Management", "Business Development"],
       credentialId: "LN-GO-2025-0714",
-      type: "professional"
+      type: "professional",
+      color: "cyan"
     },
     {
       title: "Python for Data Science",
       organization: "NPTEL",
       partner: "Indian Institute of Technology Madras",
       date: "Jan-Feb 2025",
-      recipient: "DHRUV",
       description: "Elite NPTEL Online Certification (Funded by the MoE, Govt. of India) for successfully completing the 4-week course with consolidated score of 63%.",
       details: {
         onlineAssignments: "22.92/25",
@@ -34,199 +36,198 @@ const Certifications = () => {
       category: "Technical Skills",
       skills: ["Python", "Data Science", "Programming"],
       credentialId: "NPTEL25CS60S440202867",
-      type: "technical"
+      type: "technical",
+      color: "green"
     },
     {
       title: "Intro to Machine Learning",
       organization: "Kaggle",
+      partner: null,
       date: "February 5, 2025",
-      recipient: "Dhruv Ingale",
       description: "Certificate of completion for successfully completing the Intro to Machine Learning course on Kaggle.",
       instructors: ["Dan Becker", "Alexis Cook"],
       image: "/lovable-uploads/d450cc54-8a7c-42c9-a9a4-e095fec2285d.png",
       category: "Machine Learning",
       skills: ["Machine Learning", "Data Analysis", "Python"],
       credentialId: "KAGGLE-ML-2025-0205",
-      type: "technical"
+      type: "technical",
+      color: "purple"
     }
   ];
 
-  const getCategoryColor = (category: string) => {
-    const colorMap = {
-      "Professional Development": "tech-primary",
-      "Technical Skills": "tech-secondary", 
-      "Machine Learning": "tech-accent"
+  const getColorClasses = (color: string) => {
+    const map: Record<string, { text: string; badge: string; border: string }> = {
+      cyan: { text: "text-neon-cyan", badge: "bg-neon-cyan/10 text-neon-cyan border-neon-cyan/20", border: "border-neon-cyan/15" },
+      green: { text: "text-neon-green", badge: "bg-neon-green/10 text-neon-green border-neon-green/20", border: "border-neon-green/15" },
+      purple: { text: "text-neon-purple", badge: "bg-neon-purple/10 text-neon-purple border-neon-purple/20", border: "border-neon-purple/15" },
     };
-    return colorMap[category as keyof typeof colorMap] || "tech-primary";
-  };
-
-  const getTypeIcon = (type: string) => {
-    return type === "professional" ? <Users className="w-5 h-5" /> : <Award className="w-5 h-5" />;
+    return map[color] || map.cyan;
   };
 
   return (
-    <section id="certifications" className="py-20 bg-gradient-hero">
-      <div className="container mx-auto px-4">
+    <section id="certifications" className="py-24 relative" ref={sectionRef}>
+      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 reveal">
+            <span className="inline-block font-mono text-sm text-neon-cyan/60 mb-4">
+              {'// section: 06'}
+            </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-tech bg-clip-text text-transparent">
-                Certifications
-              </span>
+              <span className="text-gradient-cyan">Certifications</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Professional certifications and achievements that validate my expertise
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Professional certifications validating my expertise
             </p>
           </div>
 
-          {/* Certifications Grid */}
+          {/* Certifications */}
           <div className="space-y-8">
-            {certifications.map((cert, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden bg-gradient-card shadow-medium hover:shadow-large transition-all duration-300"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
-                  {/* Certificate Image */}
-                  <div className="lg:col-span-1">
-                    <div className="relative rounded-lg overflow-hidden bg-white shadow-soft">
-                      <img
-                        src={cert.image}
-                        alt={`${cert.title} Certificate`}
-                        className="w-full h-auto object-contain"
-                      />
-                    </div>
-                  </div>
+            {certifications.map((cert, index) => {
+              const colors = getColorClasses(cert.color);
+              return (
+                <div
+                  key={index}
+                  className={`reveal reveal-delay-${index + 1} gradient-border hover-lift transition-all duration-500`}
+                >
+                  <div className="p-6 md:p-8 bg-card/80 rounded-xl">
+                    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                      {/* Certificate Image */}
+                      <div className="lg:col-span-1">
+                        <div className="rounded-lg overflow-hidden bg-secondary/30 border border-border/30">
+                          <img
+                            src={cert.image}
+                            alt={`${cert.title} Certificate`}
+                            className="w-full h-auto object-contain"
+                          />
+                        </div>
+                      </div>
 
-                  {/* Certificate Details */}
-                  <div className="lg:col-span-2 space-y-6">
-                    {/* Header */}
-                    <div>
-                      <div className="flex items-start justify-between mb-4">
+                      {/* Certificate Details */}
+                      <div className="lg:col-span-3 space-y-5">
+                        {/* Header */}
                         <div>
-                          <h3 className="text-2xl font-bold text-foreground mb-2">
-                            {cert.title}
-                          </h3>
-                          <div className="flex items-center gap-2 text-lg text-tech-primary font-semibold">
-                            {getTypeIcon(cert.type)}
-                            <span>{cert.organization}</span>
-                            {cert.partner && (
-                              <>
-                                <span className="text-muted-foreground">•</span>
-                                <span className="text-muted-foreground">{cert.partner}</span>
-                              </>
-                            )}
+                          <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
+                            <div>
+                              <h3 className="text-xl font-bold text-foreground mb-2">
+                                {cert.title}
+                              </h3>
+                              <div className="flex items-center gap-2 text-base font-mono">
+                                <span className={colors.text}>
+                                  {cert.type === "professional" ? <Users className="w-4 h-4 inline mr-1" /> : <Award className="w-4 h-4 inline mr-1" />}
+                                  {cert.organization}
+                                </span>
+                                {cert.partner && (
+                                  <>
+                                    <span className="text-muted-foreground">•</span>
+                                    <span className="text-muted-foreground text-sm">{cert.partner}</span>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                            <span className={`text-xs font-mono px-2.5 py-1 rounded-md border ${colors.badge}`}>
+                              {cert.category}
+                            </span>
+                          </div>
+
+                          <div className="flex items-center gap-2 text-sm text-muted-foreground font-mono">
+                            <Calendar className="w-3.5 h-3.5" />
+                            {cert.date}
                           </div>
                         </div>
-                        <Badge
-                          className={`bg-${getCategoryColor(cert.category)}/10 text-${getCategoryColor(cert.category)} border-${getCategoryColor(cert.category)}/20`}
-                        >
-                          {cert.category}
-                        </Badge>
-                      </div>
 
-                      <div className="flex items-center gap-2 text-muted-foreground mb-4">
-                        <Calendar className="w-4 h-4" />
-                        <span>{cert.date}</span>
-                      </div>
-                    </div>
+                        {/* Description */}
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {cert.description}
+                        </p>
 
-                    {/* Description */}
-                    <p className="text-muted-foreground leading-relaxed">
-                      {cert.description}
-                    </p>
-
-                    {/* Special Details for NPTEL */}
-                    {cert.details && (
-                      <div className="bg-muted/50 rounded-lg p-4">
-                        <h4 className="font-semibold text-foreground mb-3">Course Performance:</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                          <div>
-                            <span className="text-muted-foreground">Online Assignments:</span>
-                            <div className="font-semibold text-tech-success">{cert.details.onlineAssignments}</div>
+                        {/* NPTEL Details */}
+                        {cert.details && (
+                          <div className="grid grid-cols-3 gap-4 p-4 rounded-lg bg-secondary/30 border border-border/30">
+                            <div className="text-center">
+                              <div className="text-xs text-muted-foreground mb-1 font-mono">assignments</div>
+                              <div className="font-bold text-neon-green font-mono text-sm">{cert.details.onlineAssignments}</div>
+                            </div>
+                            <div className="text-center">
+                              <div className="text-xs text-muted-foreground mb-1 font-mono">proctored_exam</div>
+                              <div className="font-bold text-neon-purple font-mono text-sm">{cert.details.proctoredExam}</div>
+                            </div>
+                            <div className="text-center">
+                              <div className="text-xs text-muted-foreground mb-1 font-mono">total_candidates</div>
+                              <div className="font-bold text-neon-cyan font-mono text-sm">{cert.details.totalCandidates}</div>
+                            </div>
                           </div>
+                        )}
+
+                        {/* Instructors */}
+                        {cert.instructors && (
                           <div>
-                            <span className="text-muted-foreground">Proctored Exam:</span>
-                            <div className="font-semibold text-tech-secondary">{cert.details.proctoredExam}</div>
+                            <span className="text-xs font-mono text-muted-foreground block mb-2">instructors:</span>
+                            <div className="flex gap-2">
+                              {cert.instructors.map((instructor, idx) => (
+                                <span key={idx} className="text-xs font-mono px-3 py-1.5 rounded-md bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20">
+                                  {instructor}
+                                </span>
+                              ))}
+                            </div>
                           </div>
-                          <div>
-                            <span className="text-muted-foreground">Total Candidates:</span>
-                            <div className="font-semibold text-tech-accent">{cert.details.totalCandidates}</div>
+                        )}
+
+                        {/* Skills */}
+                        <div>
+                          <span className="text-xs font-mono text-muted-foreground block mb-2">skills_validated:</span>
+                          <div className="flex flex-wrap gap-2">
+                            {cert.skills.map((skill, skillIndex) => (
+                              <span
+                                key={skillIndex}
+                                className={`text-xs font-mono px-3 py-1.5 rounded-md border transition-all duration-300 hover:scale-105 ${colors.badge}`}
+                              >
+                                {skill}
+                              </span>
+                            ))}
                           </div>
                         </div>
-                      </div>
-                    )}
 
-                    {/* Instructors for Kaggle */}
-                    {cert.instructors && (
-                      <div>
-                        <h4 className="font-semibold text-foreground mb-2">Instructors:</h4>
-                        <div className="flex gap-2">
-                          {cert.instructors.map((instructor, idx) => (
-                            <Badge key={idx} variant="secondary" className="bg-tech-primary/10 text-tech-primary">
-                              {instructor}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Skills */}
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Skills Validated:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {cert.skills.map((skill, skillIndex) => (
-                          <Badge
-                            key={skillIndex}
-                            variant="secondary"
-                            className={`bg-${getCategoryColor(cert.category)}/10 text-${getCategoryColor(cert.category)} hover:bg-${getCategoryColor(cert.category)}/20 transition-colors`}
+                        {/* Credential + Action */}
+                        <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-border/30">
+                          <span className="text-xs font-mono text-muted-foreground">
+                            credential_id: <span className="text-foreground/70">{cert.credentialId}</span>
+                          </span>
+                          <button
+                            onClick={() => window.open(cert.image, '_blank')}
+                            className="inline-flex items-center gap-2 px-4 py-2 text-xs font-mono rounded-lg border border-border/50 text-muted-foreground hover:text-neon-cyan hover:border-neon-cyan/30 hover:bg-neon-cyan/5 transition-all duration-300"
                           >
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Credential ID */}
-                    <div className="pt-4 border-t border-border">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                        <div className="text-sm text-muted-foreground">
-                          <span className="font-medium">Credential ID:</span> {cert.credentialId}
+                            <ExternalLink className="w-3.5 h-3.5" />
+                            view_certificate()
+                          </button>
                         </div>
-                        <Button
-                          variant="tech_outline"
-                          size="sm"
-                          onClick={() => window.open(cert.image, '_blank')}
-                        >
-                          <ExternalLink className="w-4 h-4 mr-2" />
-                          View Certificate
-                        </Button>
                       </div>
                     </div>
                   </div>
                 </div>
-              </Card>
-            ))}
+              );
+            })}
           </div>
 
-          {/* Summary Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-            <Card className="p-6 bg-gradient-card shadow-soft text-center">
-              <Award className="w-8 h-8 text-tech-primary mx-auto mb-3" />
-              <div className="text-3xl font-bold text-tech-primary mb-2">3</div>
-              <div className="text-muted-foreground">Certifications Earned</div>
-            </Card>
-            <Card className="p-6 bg-gradient-card shadow-soft text-center">
-              <Users className="w-8 h-8 text-tech-secondary mx-auto mb-3" />
-              <div className="text-3xl font-bold text-tech-secondary mb-2">3</div>
-              <div className="text-muted-foreground">Organizations</div>
-            </Card>
-            <Card className="p-6 bg-gradient-card shadow-soft text-center">
-              <Calendar className="w-8 h-8 text-tech-accent mx-auto mb-3" />
-              <div className="text-3xl font-bold text-tech-accent mb-2">2025</div>
-              <div className="text-muted-foreground">Latest Certification</div>
-            </Card>
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-14">
+            {[
+              { icon: Award, ref: certCountRef, label: "Certifications", color: "text-neon-cyan" },
+              { icon: Users, ref: orgCountRef, label: "Organizations", color: "text-neon-purple" },
+              { icon: Calendar, ref: yearCountRef, label: "Latest Year", color: "text-neon-green" },
+            ].map((stat, index) => (
+              <div
+                key={index}
+                className={`reveal reveal-delay-${index + 5} neon-border rounded-xl p-6 bg-card/50 backdrop-blur-sm text-center hover-lift`}
+              >
+                <stat.icon className={`w-7 h-7 ${stat.color} mx-auto mb-3`} />
+                <div className={`text-3xl font-bold font-mono ${stat.color} mb-2`}>
+                  <span ref={stat.ref}>0</span>
+                </div>
+                <div className="text-sm text-muted-foreground font-mono">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

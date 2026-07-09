@@ -1,19 +1,15 @@
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { ExternalLink, Github, Figma, Globe } from "lucide-react";
-import { useState } from "react";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { ExternalLink, Github, Globe } from "lucide-react";
 
 const Projects = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const sectionRef = useScrollReveal();
 
   const projects = [
     {
-      title: "Yojana Yantra — Government Scheme Discovery Platform",
+      title: "Yojana Yantra",
+      subtitle: "Government Scheme Discovery Platform",
       description:
         "Built a full-stack platform to simplify discovery of government schemes by categorizing and presenting information in a clear, user-friendly format, improving accessibility over traditional government portals.",
-      image: "/api/placeholder/600/400",
       technologies: ["React", "FastAPI", "AWS", "OpenAI API", "Docker"],
       features: [
         "Eligibility-check system to help users quickly identify applicable government schemes",
@@ -27,14 +23,14 @@ const Projects = () => {
         github: "https://github.com/dmw14/Yojana-Yantra"
       },
       status: "live",
-      role: "Full Stack Developer"
+      role: "Full Stack Developer",
+      color: "cyan"
     },
-
     {
-      title: "CloudVault — Cloud File Storage & Sharing Platform",
+      title: "CloudVault",
+      subtitle: "Cloud File Storage & Sharing Platform",
       description:
         "Developed a full-stack cloud-based file storage and sharing platform enabling users to upload, manage, and securely access files via shareable links.",
-      image: "/api/placeholder/600/400",
       technologies: ["React", "Node.js", "Express.js", "MongoDB", "Cloudinary"],
       features: [
         "Secure file upload and sharing with unique shareable links",
@@ -48,14 +44,14 @@ const Projects = () => {
         github: "https://github.com/dmw14/CloudVault"
       },
       status: "live",
-      role: "Full Stack Developer"
+      role: "Full Stack Developer",
+      color: "green"
     },
-
     {
-      title: "SignatureDrive — Luxury Car Comparison Platform",
+      title: "SignatureDrive",
+      subtitle: "Luxury Car Comparison Platform",
       description:
         "Built a full-stack car comparison platform that allows users to explore and compare BMW, Mercedes-Benz, and Audi models with detailed specifications, pricing, and real-time updates.",
-      image: "/api/placeholder/600/400",
       technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
       features: [
         "Compare luxury cars with detailed specs, variants, and pricing",
@@ -69,14 +65,14 @@ const Projects = () => {
         github: "https://github.com/dmw14/SignatureDrive---CarCompareWebsite"
       },
       status: "live",
-      role: "Full Stack Developer"
+      role: "Full Stack Developer",
+      color: "purple"
     },
-
     {
-      title: "College Connect — College Communication Platform",
+      title: "College Connect",
+      subtitle: "College Communication Platform",
       description:
         "Developed a full-stack college communication platform with real-time updates and role-based access control to streamline communication between students and administrators.",
-      image: "/api/placeholder/600/400",
       technologies: ["React", "TypeScript", "Tailwind CSS", "PostgreSQL", "TanStack Query", "Supabase"],
       features: [
         "Role-based authentication system for students and admins",
@@ -90,211 +86,166 @@ const Projects = () => {
         github: "https://github.com/dmw14/College-Connect"
       },
       status: "live",
-      role: "Full Stack Developer"
+      role: "Full Stack Developer",
+      color: "blue"
     }
   ];
 
-  const getStatusBadge = (status: string) => {
-    const statusConfig = {
-      live: { label: "Live Project", color: "bg-tech-success text-white" },
-      design: { label: "Design Project", color: "bg-tech-accent text-white" },
-      development: { label: "In Development", color: "bg-tech-secondary text-white" }
+  const getAccentColor = (color: string) => {
+    const map: Record<string, { text: string; border: string; glow: string; badge: string; urlColor: string }> = {
+      cyan: { text: "text-neon-cyan", border: "border-neon-cyan/20", glow: "hover:shadow-[0_0_25px_hsla(180,100%,50%,0.2)]", badge: "bg-neon-cyan/10 text-neon-cyan border-neon-cyan/20", urlColor: "text-neon-cyan/50" },
+      green: { text: "text-neon-green", border: "border-neon-green/20", glow: "hover:shadow-[0_0_25px_hsla(120,100%,50%,0.15)]", badge: "bg-neon-green/10 text-neon-green border-neon-green/20", urlColor: "text-neon-green/50" },
+      purple: { text: "text-neon-purple", border: "border-neon-purple/20", glow: "hover:shadow-[0_0_25px_hsla(271,91%,65%,0.2)]", badge: "bg-neon-purple/10 text-neon-purple border-neon-purple/20", urlColor: "text-neon-purple/50" },
+      blue: { text: "text-neon-blue", border: "border-neon-blue/20", glow: "hover:shadow-[0_0_25px_hsla(211,100%,50%,0.2)]", badge: "bg-neon-blue/10 text-neon-blue border-neon-blue/20", urlColor: "text-neon-blue/50" },
     };
-    const config = statusConfig[status as keyof typeof statusConfig] || statusConfig.design;
-    return <Badge className={config.color}>{config.label}</Badge>;
-  };
-
-  const DesignModal = ({ project }: { project: any }) => {
-    const [modalImageIndex, setModalImageIndex] = useState(0);
-
-    if (!project.images) return null;
-
-    return (
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle>{project.title}</DialogTitle>
-        </DialogHeader>
-        <div className="space-y-4">
-          <img
-            src={project.images[modalImageIndex].url}
-            alt={project.images[modalImageIndex].title}
-            className="w-full h-auto object-contain rounded-lg"
-          />
-          <div className="flex gap-2 justify-center flex-wrap">
-            {project.images.map((img: any, imgIndex: number) => (
-              <Button
-                key={imgIndex}
-                size="sm"
-                variant={modalImageIndex === imgIndex ? "default" : "secondary"}
-                onClick={() => setModalImageIndex(imgIndex)}
-                className="px-4 py-2"
-              >
-                {img.title}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </DialogContent>
-    );
+    return map[color] || map.cyan;
   };
 
   return (
-    <section id="projects" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-24 relative" ref={sectionRef}>
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 reveal">
+            <span className="inline-block font-mono text-sm text-neon-cyan/60 mb-4">
+              {'// section: 05'}
+            </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="bg-gradient-tech bg-clip-text text-transparent">
-                Featured Projects
-              </span>
+              <span className="text-gradient-cyan">Featured Projects</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              A showcase of my development and design work, from web applications to UI/UX designs
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              A showcase of my development work — from web apps to full-stack platforms
             </p>
           </div>
 
-          {/* Projects Grid */}
-          <div className="space-y-12">
-            {projects.map((project, index) => (
-              <Card
-                key={index}
-                className="overflow-hidden bg-gradient-card shadow-medium hover:shadow-large transition-all duration-300"
-              >
-                <div className={`grid grid-cols-1 lg:grid-cols-2 ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-                  {/* Project Image */}
-                  <div className={`relative overflow-hidden ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                    {project.image?.startsWith('/lovable-uploads/') ? (
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover aspect-video"
-                      />
-                    ) : (
-                      <div className="aspect-video flex items-center justify-center bg-gradient-to-br from-tech-primary/10 to-tech-secondary/10">
-                        <div className="text-tech-primary/30">
-                          <Globe className="w-24 h-24" />
-                        </div>
-                      </div>
-                    )}
+          {/* Projects */}
+          <div className="space-y-10">
+            {projects.map((project, index) => {
+              const accent = getAccentColor(project.color);
+              return (
+                <div
+                  key={index}
+                  className={`reveal reveal-delay-${Math.min(index + 1, 4)} browser-window hover-lift ${accent.glow} transition-all duration-500`}
+                >
+                  {/* Browser Chrome */}
+                  <div className="browser-chrome">
+                    <div className="terminal-dot terminal-dot-red" />
+                    <div className="terminal-dot terminal-dot-yellow" />
+                    <div className="terminal-dot terminal-dot-green" />
+                    <div className="browser-url">
+                      <span className={accent.urlColor}>
+                        {project.links.live
+                          ? project.links.live.replace('https://', '')
+                          : `github.com/dmw14/${project.title.replace(/\s+/g, '-')}`
+                        }
+                      </span>
+                    </div>
                   </div>
 
                   {/* Project Content */}
-                  <div className="p-8 lg:p-12">
-                    <div className="flex items-center gap-3 mb-4">
-                      <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
-                        {project.title}
-                      </h3>
-                      {getStatusBadge(project.status)}
-                    </div>
+                  <div className="p-6 md:p-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                      {/* Left — Info */}
+                      <div className="lg:col-span-3">
+                        {/* Title */}
+                        <div className="flex flex-wrap items-center gap-3 mb-3">
+                          <h3 className="text-2xl lg:text-3xl font-bold text-foreground">
+                            {project.title}
+                          </h3>
+                          <span className={`text-xs font-mono px-2.5 py-1 rounded-md border ${accent.badge}`}>
+                            {project.status === 'live' ? '● Live' : '◐ Dev'}
+                          </span>
+                        </div>
+                        <p className={`text-sm font-mono ${accent.text} mb-4`}>
+                          {project.subtitle}
+                        </p>
 
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {project.description}
-                    </p>
+                        <p className="text-muted-foreground mb-5 leading-relaxed text-sm">
+                          {project.description}
+                        </p>
 
-                    <div className="mb-6">
-                      <Badge variant="secondary" className="mb-3 bg-tech-primary/10 text-tech-primary">
-                        {project.role}
-                      </Badge>
-                    </div>
+                        {/* Role */}
+                        <div className="mb-5">
+                          <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-secondary text-muted-foreground">
+                            role: {project.role}
+                          </span>
+                        </div>
 
-                    {/* Features */}
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3">Key Features:</h4>
-                      <ul className="space-y-2">
-                        {project.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
-                            <div className="w-1.5 h-1.5 rounded-full bg-tech-primary mt-2 flex-shrink-0" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Technologies */}
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3">Technologies:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.map((tech, techIndex) => (
-                          <Badge
-                            key={techIndex}
-                            variant="secondary"
-                            className="bg-muted text-muted-foreground hover:bg-tech-primary/10 hover:text-tech-primary transition-colors"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Action Buttons */}
-                    <div className="flex flex-wrap gap-3">
-                      {project.links.live && (
-                        <Button
-                          variant="tech"
-                          size="sm"
-                          asChild
-                        >
-                          <a
-                            href={project.links.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2"
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                            View Live
-                          </a>
-                        </Button>
-                      )}
-
-                      {project.links.github && (
-                        <Button
-                          variant="tech_outline"
-                          size="sm"
-                          asChild
-                        >
-                          <a
-                            href={project.links.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2"
-                          >
-                            <Github className="w-4 h-4" />
-                            Source Code
-                          </a>
-                        </Button>
-                      )}
-
-                      {project.links.figma && (
-                        project.hasMultipleImages ? (
-                          <Dialog>
-                            <DialogTrigger asChild>
-                              <Button
-                                variant="tech_outline"
-                                size="sm"
+                        {/* Tech Stack */}
+                        <div className="mb-6">
+                          <span className="text-xs font-mono text-muted-foreground mb-2 block">
+                            {`// tech_stack`}
+                          </span>
+                          <div className="flex flex-wrap gap-2">
+                            {project.technologies.map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className={`text-xs font-mono px-3 py-1.5 rounded-lg border transition-all duration-300 hover:scale-105 ${accent.badge}`}
                               >
-                                <Figma className="w-4 h-4 mr-2" />
-                                View Design
-                              </Button>
-                            </DialogTrigger>
-                            <DesignModal project={project} />
-                          </Dialog>
-                        ) : (
-                          <Button
-                            variant="tech_outline"
-                            size="sm"
-                            onClick={() => typeof project.links.figma === 'string' && window.open(project.links.figma, '_blank')}
-                          >
-                            <Figma className="w-4 h-4 mr-2" />
-                            View Design
-                          </Button>
-                        )
-                      )}
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Action Buttons */}
+                        <div className="flex flex-wrap gap-3">
+                          {project.links.live && (
+                            <a
+                              href={project.links.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`inline-flex items-center gap-2 px-5 py-2.5 text-sm font-mono rounded-lg bg-neon-cyan/10 text-neon-cyan border border-neon-cyan/20 hover:bg-neon-cyan/20 hover:border-neon-cyan/40 hover:shadow-[0_0_15px_hsla(180,100%,50%,0.2)] transition-all duration-300`}
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                              view_live()
+                            </a>
+                          )}
+                          {project.links.github && (
+                            <a
+                              href={project.links.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-mono rounded-lg border border-border/50 text-muted-foreground hover:text-foreground hover:border-border hover:bg-secondary/50 transition-all duration-300"
+                            >
+                              <Github className="w-4 h-4" />
+                              source_code()
+                            </a>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Right — Features */}
+                      <div className="lg:col-span-2">
+                        <div className="terminal-window h-full">
+                          <div className="terminal-header">
+                            <div className="terminal-dot terminal-dot-red" />
+                            <div className="terminal-dot terminal-dot-yellow" />
+                            <div className="terminal-dot terminal-dot-green" />
+                            <span className="ml-2 text-xs font-mono text-muted-foreground">
+                              features.log
+                            </span>
+                          </div>
+                          <div className="terminal-body text-xs space-y-2.5">
+                            <div className="text-neon-green mb-3">
+                              ❯ cat features.log
+                            </div>
+                            {project.features.map((feature, fIndex) => (
+                              <div key={fIndex} className="flex items-start gap-2">
+                                <span className="text-neon-cyan/40 shrink-0">{`//`}</span>
+                                <span className="text-muted-foreground leading-relaxed">
+                                  {feature}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </Card>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
