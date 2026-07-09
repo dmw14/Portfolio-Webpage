@@ -63,7 +63,7 @@ const About = () => {
                           <span className="text-neon-purple">const</span>
                           <span className="text-neon-cyan">education</span>
                           <span className="text-muted-foreground">=</span>
-                          <span className="text-neon-green">"B.E. Computer Eng"</span>
+                          <span className="text-neon-green">"B.Tech. Computer Eng"</span>
                           <span className="text-muted-foreground">;</span>
                         </div>
                         <div className="flex items-center gap-2">
