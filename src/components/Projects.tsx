@@ -27,6 +27,27 @@ const Projects = () => {
       color: "cyan"
     },
     {
+      title: "InsightX",
+      subtitle: "AI-Based Academic Technology Trend Analyzer",
+      description:
+        "Performed trend analysis on research abstracts using TF-IDF, K-Means clustering, and LLM-based domain classification to identify emerging academic technology patterns.",
+      technologies: ["Python", "Scikit-learn", "LLMs", "Pandas", "NumPy", "Streamlit", "NLP"],
+      features: [
+        "TF-IDF vectorization of research abstracts for feature extraction",
+        "K-Means clustering to group related academic papers by topic",
+        "LLM-based domain classification for intelligent categorization",
+        "Interactive Streamlit dashboard for trend visualization",
+        "NLP pipeline for preprocessing and analyzing research abstracts"
+      ],
+      links: {
+        live: null,
+        github: "https://github.com/dmw14/InsightX"
+      },
+      status: "live",
+      role: "ML / Data Engineer",
+      color: "purple"
+    },
+    {
       title: "CloudVault",
       subtitle: "Cloud File Storage & Sharing Platform",
       description:
@@ -46,48 +67,6 @@ const Projects = () => {
       status: "live",
       role: "Full Stack Developer",
       color: "green"
-    },
-    {
-      title: "SignatureDrive",
-      subtitle: "Luxury Car Comparison Platform",
-      description:
-        "Built a full-stack car comparison platform that allows users to explore and compare BMW, Mercedes-Benz, and Audi models with detailed specifications, pricing, and real-time updates.",
-      technologies: ["React", "TypeScript", "Vite", "Tailwind CSS", "Supabase"],
-      features: [
-        "Compare luxury cars with detailed specs, variants, and pricing",
-        "Dynamic data-driven UI for real-time comparison updates",
-        "Supabase integration for backend and real-time data handling",
-        "Reusable component-based architecture for scalability",
-        "Fully responsive modern UI design"
-      ],
-      links: {
-        live: null,
-        github: "https://github.com/dmw14/SignatureDrive---CarCompareWebsite"
-      },
-      status: "live",
-      role: "Full Stack Developer",
-      color: "purple"
-    },
-    {
-      title: "College Connect",
-      subtitle: "College Communication Platform",
-      description:
-        "Developed a full-stack college communication platform with real-time updates and role-based access control to streamline communication between students and administrators.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "PostgreSQL", "TanStack Query", "Supabase"],
-      features: [
-        "Role-based authentication system for students and admins",
-        "Admin dashboard for categorized notices (academic, exam, events, urgent)",
-        "Student query system with status tracking and response workflow",
-        "Row-Level Security (RLS) for secure data access",
-        "Efficient server-state management using TanStack Query"
-      ],
-      links: {
-        live: null,
-        github: "https://github.com/dmw14/College-Connect"
-      },
-      status: "live",
-      role: "Full Stack Developer",
-      color: "blue"
     }
   ];
 
