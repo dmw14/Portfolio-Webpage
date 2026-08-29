@@ -19,7 +19,7 @@ const Projects = () => {
         "Integrated direct application links for seamless navigation"
       ],
       links: {
-        live: "https://yojanayantra.vercel.app/",
+        live: null,
         github: "https://github.com/dmw14/Yojana-Yantra"
       },
       status: "live",
@@ -61,7 +61,7 @@ const Projects = () => {
         "Fully responsive modern UI design"
       ],
       links: {
-        live: "https://signature-drive.vercel.app",
+        live: null,
         github: "https://github.com/dmw14/SignatureDrive---CarCompareWebsite"
       },
       status: "live",
