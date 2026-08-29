@@ -57,7 +57,7 @@ const Footer = () => {
               Open to freelance & internship opportunities
             </p>
             <p className="text-[11px] text-muted-foreground/40 font-mono">
-              process.exit(0) — built with React + TypeScript + ❤️
+              
             </p>
           </div>
         </div>
