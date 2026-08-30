@@ -7,7 +7,8 @@ import {
   Database,
   Wrench,
   Cloud,
-  GitBranch
+  GitBranch,
+  Server
 } from "lucide-react";
 
 const Skills = () => {
@@ -22,18 +23,38 @@ const Skills = () => {
       color: "cyan"
     },
     {
-      title: "Web Development",
+      title: "Frontend Development",
       icon: <Globe className="w-5 h-5" />,
-      command: "ls ~/skills/web",
-      skills: ["React.js", "HTML", "CSS", "Express.js", "Node.js", "Vite", "Tailwind CSS"],
+      command: "ls ~/skills/frontend",
+      skills: ["React.js", "HTML", "CSS", "Vite", "Tailwind CSS"],
       color: "green"
     },
     {
-      title: "Cloud & Storage",
-      icon: <Cloud className="w-5 h-5" />,
-      command: "ls ~/skills/cloud",
-      skills: ["AWS", "Cloudinary"],
+      title: "Backend Development",
+      icon: <Server className="w-5 h-5" />,
+      command: "ls ~/skills/backend",
+      skills: [
+        "FastAPI",
+        "Express.js",
+        "Node.js",
+        "REST APIs",
+        "Pydantic",
+        "JWT Authentication",
+        "Swagger"
+      ],
       color: "purple"
+    },
+    {
+      title: "Machine Learning & Data",
+      icon: <Brain className="w-5 h-5" />,
+      command: "ls ~/skills/ml",
+      skills: [
+        "Data Preprocessing",
+        "Data Visualization",
+        "Classification",
+        "Image Processing"
+        ],
+      color: "orange"
     },
     {
       title: "Databases",
@@ -43,18 +64,11 @@ const Skills = () => {
       color: "blue"
     },
     {
-      title: "UI/UX Design",
-      icon: <Palette className="w-5 h-5" />,
-      command: "ls ~/skills/design",
-      skills: ["Figma", "Prototyping", "Design Systems"],
-      color: "pink"
-    },
-    {
-      title: "Machine Learning & Data",
-      icon: <Brain className="w-5 h-5" />,
-      command: "ls ~/skills/ml",
-      skills: ["Pandas", "scikit-learn", "Data Preprocessing & Visualization"],
-      color: "orange"
+      title: "Cloud & Storage",
+      icon: <Cloud className="w-5 h-5" />,
+      command: "ls ~/skills/cloud",
+      skills: ["AWS", "Cloudinary"],
+      color: "purple"
     },
     {
       title: "Version Control",

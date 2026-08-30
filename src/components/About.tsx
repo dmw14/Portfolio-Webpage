@@ -89,7 +89,7 @@ const About = () => {
                   </div>
                   <div>
                     <h4 className="text-lg font-bold text-foreground mb-2">
-                      Web Development
+                      Full Stack Developer
                     </h4>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                       Building responsive web applications with modern web technologies
