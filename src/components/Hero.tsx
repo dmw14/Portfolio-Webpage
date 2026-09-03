@@ -103,7 +103,7 @@ const useTypewriter = (words: string[], typingSpeed = 80, deletingSpeed = 50, pa
 // ── Main Hero Component ──
 const Hero = () => {
   const typedText = useTypewriter(
-    ["Full Stack Developer", "Web Developer", "UI/UX Enthusiast", "Problem Solver"],
+    ["Full Stack Developer", "Web Developer", "Machine Learning Engineer", "Problem Solver", "Data Analyst"],
     70,
     40,
     2500
